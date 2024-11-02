@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+
+                    <div class="col-mb-8 offset-md-2">
+                        <div class="my-cart mt-1">
+
+                            <div class="container text-center">
+                                <img style="width: 70px;" src="" th:src="@{/img/loginbanner2.png}" />
+                            </div>
+
+                            <h1 class="text-center text-primary fw-bold my-1">Login Here!!</h1>
+
+                            <form th:action="@{/do_login}" method="post">
+                                <div class="mb-3">
+                                    <label for="email_field" class="form-label">Your Email</label>
+                                    <input type="email" name="email" class="form-control" id="email_field"
+                                        placeholder="Enter here" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password_field" class="form-label">Your Password</label>
+                                    <input type="password" name="password" class="form-control" id="password_field"
+                                        placeholder="Enter here" required>
+                                </div>
+
+                                <div class="container text-center">
+                                    <button type="submit" class="btn btn-outline-success  w-100 mb-3">Login</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
