@@ -16,16 +16,26 @@
                     <div class="col-mb-8 offset-md-2">
                         <div class="my-cart mt-1">
 
+                            <div th:if="${param.error}" class="alert alert-danger text-center">
+                                Invalid username and password.
+                            </div>
+
+                            <div th:if="${param.logout}" class="alert alert-success text-center">
+                                You have been logged out.
+                            </div>
+
+
+
                             <div class="container text-center">
                                 <img style="width: 70px;" src="" th:src="@{/img/loginbanner2.png}" />
                             </div>
 
                             <h1 class="text-center text-primary fw-bold my-1">Login Here!!</h1>
 
-                            <form th:action="@{/do_login}" method="post">
+                            <form th:action="@{/login}" action="#" method="post">
                                 <div class="mb-3">
                                     <label for="email_field" class="form-label">Your Email</label>
-                                    <input type="email" name="email" class="form-control" id="email_field"
+                                    <input type="email" name="username" class="form-control" id="email_field"
                                         placeholder="Enter here" required>
                                 </div>
 
@@ -36,8 +46,11 @@
                                 </div>
 
                                 <div class="container text-center">
-                                    <button type="submit" class="btn btn-outline-success  w-100 mb-3">Login</button>
+                                    <button onclick="window.location.href='/user/index'" class="btn btn-outline-success w-100 mb-3">Login</button>
                                 </div>
+
+                                <div class="container text-center">
+                                    <a href="/signup" class="btn btn-outline-primary w-100">Register</a>
                             </form>
 
                         </div>
