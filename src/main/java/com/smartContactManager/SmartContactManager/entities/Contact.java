@@ -7,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "CONTACT")
@@ -15,12 +17,26 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int cId;
+   
+    @NotBlank(message = "Name field is required")
+    @Size(min = 2, max = 30, message = "Name should be between 2 and 30 characters")
     private String name;
+
+   @NotBlank(message = "Second Name field is required")
+    @Size(min = 2, max = 6, message = "Second Name should be between 2 and 6 characters")
     private String secondName;
+
+   
     private String work;
+
     private String email;
+
     private String phone;
+
+    
     private String image;
+
+    
     @Column(length = 5000)
     private String description;
     
@@ -81,6 +97,13 @@ public class Contact {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    // @Override
+    // public String toString() {
+    //     return "Contact [cId=" + cId + ", name=" + name + ", secondName=" + secondName + ", work=" + work + ", email="
+    //             + email + ", phone=" + phone + ", image=" + image + ", description=" + description + ", user=" + user
+    //             + "]";
+    // }
    
 
 

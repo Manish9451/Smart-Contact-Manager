@@ -49,6 +49,9 @@ public class MyConfig {
                 .requestMatchers("/**").permitAll()
             .and()
             .formLogin().loginPage("/login")
+            .loginProcessingUrl("/dologin")
+            .defaultSuccessUrl("/user/index")
+            
             .and()
             .csrf().disable();
 

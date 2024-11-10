@@ -1,34 +1,38 @@
-body{
+/* General Background */
+body {
     background: linear-gradient(135deg, #e3f2fd, #e1bee7);
-  
 }
-.bg-primary{
-    background-color: #20283e!important;
-}
-.banner{
 
+* {
+    transition: all 0.5s;
+}
+
+.bg-primary {
+    background-color: #20283e !important;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Banner */
+.banner {
     width: 100%;
     height: 93vh;
-    background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(../img/banner2.jpg) no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/banner2.jpg) no-repeat center center;
     color: white;
     background-size: cover;
 }
 
-/* .mycol{
-    background: linear-gradient(135deg, #e3f2fd, #e1bee7);
-} */
-
-.my-cart{
-    /* background: #fff; */
-    
-       
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        background-size: cover;
-      
-       
-    
+.my-cart {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
 }
 
 .typing-text {
@@ -42,18 +46,82 @@ body{
 }
 
 .blinking-text {
-    color: #ff1500; /* Same blue color */
-    font-size: 24px; /* Adjust font size if needed */
+    color: #ff1500;
+    font-size: 24px;
     font-weight: bold;
     animation: blinking 1s infinite;
 }
 
+/* Sidebar (Fixed) */
+.sidebar {
+    position: fixed;
+    top: 56px; /* Adjust based on navbar height */
+    left: 0;
+    width: 18%;
+    background-color: #d1c4e9;
+    height: calc(100vh - 56px); /* Full viewport height minus navbar height */
+    padding-top: 45px;
+    overflow-y: auto;
+    z-index: 900; /* Ensure sidebar appears over content */
+}
+
+.sidebar .crossbtn {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sidebar a {
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #20283e;
+}
+
+.sidebar a:hover {
+    background: linear-gradient(135deg, #e3f2fd, #e1bee7);
+}
+
+/* Content Area */
+.content {
+    margin-left: 20%; /* Same width as the sidebar */
+    padding-top: 70px; /* Adjust based on navbar height */
+    height: calc(100vh - 56px); /* Full height minus navbar height */
+    overflow-y: auto; /* Enable scrolling only for the content area */
+}
+
+.content i {
+    cursor: pointer;
+}
+
+.content i:hover {
+    background: linear-gradient(135deg, #e3f2fd, #e1bee7);
+}
+
+/* Mobile View - Hide Sidebar */
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+        width: 80%;
+        background-color: #d1c4e9;
+        height: 100vh;
+        position: fixed;
+        padding-top: 20px;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* Animations */
 @keyframes blinking {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
-
 
 @keyframes typing {
     0%, 40% {
