@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -28,7 +29,9 @@ public class Contact {
 
    
     private String work;
-
+      
+    @NotBlank(message = "Email field is required")
+    @Pattern(regexp = "^(?=.{1,64}@.{1,255}$)(?=.{6,})([a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+)@([a-zA-Z0-9.-]+)\\.[a-zA-Z]{2,}$", message = "Please provide a valid email address")
     private String email;
 
     private String phone;
