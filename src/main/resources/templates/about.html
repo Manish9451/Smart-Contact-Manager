@@ -5,13 +5,93 @@
 <head>
 <meta charset="UTF-8">
     <title>about</title>
+    <style>
+        .hero-section {
+            background-color: #343a40;
+            color: white;
+            padding: 60px 0;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+        }
+        .mission-section {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+        .team-section img {
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-
+    
     <section>
-        <h1>This is about page</h1>
-        <h2>Here we are going to write about Smart Contact Manager</h2>
-    </section>
+        <div class="mt-5">
+   <!-- Hero Section -->
+   <section class="hero-section text-center">
+    <div class="container">
+        <h1 >Welcome to Smart Contact Manager</h1>
+        <p>Your one-stop solution for managing and organizing your contacts efficiently.</p>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="mission-section">
+    <div class="container text-center">
+        <h2 class="mb-4">Our Mission</h2>
+        <p>
+            At Smart Contact Manager, our mission is to simplify the way you handle your contacts. 
+            Whether it's for personal use or professional networking, we aim to provide a seamless 
+            and secure platform for organizing, storing, and accessing your contact information anytime, anywhere.
+        </p>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h5>Easy to Use</h5>
+                <p>A user-friendly interface designed for everyone.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Secure</h5>
+                <p>Your data is encrypted and safely stored.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Accessible</h5>
+                <p>Access your contacts anytime, anywhere.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Meet Our Team</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="" th:src="@{/img/contactdefault.jpg}" alt="Team Member" class="img-fluid mb-3 rounded-circle" height="150" width="150">
+                <h5>John Doe</h5>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="col-md-4">
+                <img src="" th:src="@{/img/contactdefault.jpg}" alt="Team Member" class="img-fluid mb-3 rounded-circle" height="150" width="150">
+                <h5>Jane Smith</h5>
+                <p>CTO</p>
+            </div>
+            <div class="col-md-4">
+                <img src="" th:src="@{/img/contactdefault.jpg}" alt="Team Member" class="img-fluid mb-3 rounded-circle" height="150" width="150">
+                <h5>Emily Brown</h5>
+                <p>Head of Marketing</p>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</section>
 
 </body>
 
